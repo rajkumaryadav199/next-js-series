@@ -1,4 +1,14 @@
-import React from 'react'
+import { Metadata } from "next"
+
+type Props={
+  params:{
+    productId:string
+  }
+}
+
+const generateMatadata = ({params}:Props):Metadata=>{
+  return {title:`Product ${params.productId}`}
+}
 
 const ProductDetail = (
     {params}:{
