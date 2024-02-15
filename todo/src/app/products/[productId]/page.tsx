@@ -1,19 +1,19 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
 type Props={
   params:{
-    productId:string
-  }
+    productId:string;
+  };
 }
 
-const generateMatadata = ({params}:Props):Metadata=>{
-  return {title:`Product ${params.productId}`}
-}
+export const generateMetadata = ({params}:Props): Metadata =>{
+  return { 
+    title: `Product ${params.productId}`
+  };
+};
 
-const ProductDetail = (
-    {params}:{
-        params:{productId:string}
-    }) => {
+export default function ProductDetail(
+    {params}:Props){
   return (
     <div>
       <h1>Product details pages {params.productId}</h1>
@@ -21,4 +21,3 @@ const ProductDetail = (
   )
 }
 
-export default ProductDetail
