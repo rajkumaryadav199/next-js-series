@@ -4,9 +4,9 @@ export default function MyOrders(){
     const router =useRouter();
     const onclick=()=>{
         router.push('/')
-        // router.forward();
-        // router.back()
-        // router.replace()
+        router.forward();
+        router.back()
+        router.replace()
 
     }
     return<>
