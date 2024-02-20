@@ -1,8 +1,10 @@
-"client side"
+"use client"
 import { Metadata } from "next"
 import { usePathname } from "next/navigation"
+import Link from "next/link"
+import { useState } from "react"
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: {
     absolute:'',
     default:'next.js -tutorial',
@@ -19,11 +21,19 @@ export default function AuthLayout({
   children: React.ReactNode
 }) {
     const pathname = usePathname();
+    const [input, setInput] =useState('');
 
-  return (<>
-  {
-    navLinks.map((links)=>{<div> {links.title}</div>})
-  }
-  </>
+  return (<div>
+  <div>
+    <input value={input} onChange={(e)=>setInput(e.target.value)}/>
+  </div>
+   {
+        navLinks.map((link)=>{
+          const isActive = pathname.startsWith(link.href)
+          return <Link href={`${link.href}`} key={link.title} className={isActive ? "font-bold mr-4":"text-blue-500 mr-4"}>{link.title}</Link>
+        })
+      }
+      {children}
+  </div>
   )
 }
