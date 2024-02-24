@@ -15,15 +15,15 @@ const metadata: Metadata = {
 const navLinks=[
     {"title":'Register', "href":"/register"},{"title":'login', "href":"/login"},{"title":'forgotPassword', "href":"/forgotPassword"}
   ]
-export default function AuthLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-    const pathname = usePathname();
-    const [input, setInput] =useState('');
+// export default function AuthLayout({
+//   children,
+// }: {
+//   children: React.ReactNode
+// }) {
+//     const pathname = usePathname();
+//     const [input, setInput] =useState('');
 
-  return (<div>
+//   return (<div>
   <div>
     <input value={input} onChange={(e)=>setInput(e.target.value)}/>
   </div>
