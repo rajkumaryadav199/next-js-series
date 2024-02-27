@@ -6,6 +6,15 @@ const Review = ({params}:{params:{productId:string, reviewId:string}}) => {
   if(parseInt(params.reviewId)>1001){
     notFound()
   }
+
+function getRendomInt(count:number){
+return Math.floor( Math.random() * count)
+}
+
+const rundom =getRendomInt(2)
+if(rundom === 1){
+  throw new Error ('Error loading review')
+}
   console.log("parseInt", parseInt)
   return (
     <div>
